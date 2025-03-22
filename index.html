@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishnu Suderson - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .header-gradient {
+      background: #3498db;
+    }
+    .project-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+    .skill-tag {
+      background-color: #f1f5f9;
+      display: inline-block;
+      margin: 0.25rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+    }
+    .card {
+      border-radius: 0.5rem;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .nav-item {
+      position: relative;
+      padding: 0.5rem 1rem;
+      margin: 0 0.25rem;
+      transition: color 0.3s;
+    }
+    .nav-item:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s;
+    }
+    .nav-item:hover:after {
+      width: 100%;
+    }
+  </style>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .header-gradient {
+      background: #3498db;
+    }
+    .project-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+    .skill-tag {
+      background-color: #f1f5f9;
+      display: inline-block;
+      margin: 0.25rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+    }
+    .card {
+      border-radius: 0.5rem;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .nav-item {
+      position: relative;
+      padding: 0.5rem 1rem;
+      margin: 0 0.25rem;
+      transition: color 0.3s;
+    }
+    .nav-item:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s;
+    }
+    .nav-item:hover:after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header/Navigation -->
+  <header class="header-gradient text-white shadow-md sticky top-0 z-50" data-aos="fade-down">
+    <div class="container mx-auto py-4 px-6">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-bold">Vishnu Suderson</h1>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#about" class="nav-item">About</a>
+          <a href="#education" class="nav-item">Education</a>
+          <a href="#skills" class="nav-item">Skills</a>
+          <a href="#projects" class="nav-item">Projects</a>
+          <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/in/vishnusuderson/" target="_blank"><i data-feather="linkedin" class="w-5 h-5"></i></a>
+          <a href="https://github.com/vishnu-suderson" target="_blank"><i data-feather="github" class="w-5 h-5"></i></a>
+          <a href="mailto:m.vishnusuderson@gmail.com"><i data-feather="mail" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/3 flex justify-center mb-8 md:mb-0">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAKCggQEAgJCAgJCBYICAkJCA8ICQcKIB0iIiAdHx8kKDQsJCYxJx8fLTItMTUrMENDIys0RD8tNzQ5LisBCgoKDg0OFRAQFSsdFR0tKysrLS0rKy0rLSstKy0tLS0tLS0tLSstKy0rKy0tLS0tLSsrKys3Ky0rKysrKysrK//AABEIAMgAyAMBEQACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAACAAEEBQYDB//EAEAQAAEDAwIDBAYHBQgDAAAAAAEAAhEDBCEFEjFBUQYTYXEiMoGRocEHFCNCUmLRQ6Kx4fAkRFNjZHKCkzNUkv/EABoBAAIDAQEAAAAAAAAAAAAAAAABAgMFBAb/xAApEQACAgEEAQUBAAEFAAAAAAAAAQIRAwQSITEFEyIyQVFhIxQzQnGB/9oADAMBAAIRAxEAPwDX6KdnZTTIAbHZuk/GPS7oLu0690TlzfFnnxK9RDowGKVIQpQApQApQA+5KgFKKAW5PgBw5KgH3I6DsGpcNYMva3llwCg5/wBJKEvwD69T/wAan/8AYS9RfpL0pfgbbth4VWHl6wKPUX6Hpy/DqKk8D8ZUr/pBr+Bh/imKhB5RQD94hIQQqnqfeltGEK5/E73pbAsNtw4ftHj/AJEKOyI9zOjb2oP29QeVQhReKDJKbOg1OsP7zW/7Sk9PD8JerP8ATo3WK4/vVb/sJUHpYfhL15/p3ZrtwP7y/wBplR/0mP8ABrUz/S9juOzFq2Nnd6FTobZnadgCxtKvfE1s79rPPSvTowRIASAEgBIASAEgAXvDRJIA5kmAEpSUSUYbisuNbY2QxpqngD6rZXJPVxidUNI2Vtxq9WoCNwpCIOwZK5JaqTOmOliiG6qXZLnOMRLiXFUPJJ/ZeoV0gJPJQ3P9Jf8AgYP8ZCe5/o6/h3pXL2erUe3ycYU45ZL7Iyxwf0WFHW6jeLWv9m0ldMdZJHNPSRZbWWotr4B2P4lhOSuvHqFI48mncSaCrznHTAdOhUKUgdhApDVjgo5AcFABApDtG07SDudD2wW7KNKiAfWGWhef0S/yI2dT8GeeH5r0aMZ9iCBCQAkAJACQH9OF5dNoMc5xwMAc3OUMuRY42WYsbnIy97fuuDkwyZawHDVj5tS5s1cWBRRFL/d8VztlyQ8f1KQUCXIbHQmPylY6Ok/FMQezaeODlMR0eIHFSAZj3NIIO0gyDwITjKuRON8F/peqiptY8xU4NdwD1pYNTu4Zn59Nt5RcNP6rtRwvgdMBIAcIAcJCCBSGmEEgNr27dGnR+O5a35/JYWi/3EbGq+DPPCvQGP8AYggBFACQAkAIlAJWZTXL3vapAM06foM/MVj6vM3Laa+mxKMbKsHmVw2jqD3BF2HQnuiENgJomEgO7WAQeY4pgJ7seZx5osB2Hc3xBhFioNuGNnju2lSsKCqDAj2oEjlUMeEZnxUt1dBV9mm0C9+sUSHGalI7T1c3kVq6XLuRlarFtZbBdf2colIBIAcJCHQAQSGbL6QD/Y7cdbsH91yw9Avea2rfsMAVv/RlCCBDoASQCQBG1Ot3VvWdzDIH+5U5pbYstwxucTFPd+qwJys3EqSAiVWwOrGJoDptBjwGUxiadvL9ECHe7xzxCTkMjufn2yoNgG2pG6OJ+CdhQzqhjjzlFjokU6voZPEz7FJMiA90j2fFOwLTsu4i5eOTqJnzkLv0D9xxaz4mrWt/DL/o8pgJMB0CHSEOEho1n0hv+ysm9axf7h/NY/jl7jV1r9ph1tGYIJiEUAOkAkAV2vkC0qzzIA8TK5tW/wDGzp0vzRjyZ/gsC+TY7R0AhoSGKUADv2n4EdUrA6bsexOwOLnFQbGDxURhNQgHITAJpTQmKVIRpey9sAx1SZe492OjGra0WOobjL1c/dtL8Lu+7OH+DpAOpAJMBwkIIJAjSfSI/wC008f5dRx97VleOXZp636MetgzhBACQA4SEJAFR2lfFu0firAeyCuHXP8Ax0dujVsysQfisORq/YZdIhKx0JjSeXL3JWOg3UTEwT1xhKw2tCZRLsAE4nyCYJMlW+k1apxRfHGYMQobiagy1odlarhJpkYnxKW8ksQdTsq8D1XDE9VHeS9Ira2i1GF3oy2YBOCSpKRF4yJUs3MPqk+QlTTIbDi5v6KaKzQdla2K1MmYPeN8BzWv4+fDRm62PKZoVoLo4H2EgQ6YDqQCCQhwgC++kB03lsPwWs+8/wAlmeNXDNHW/RllqLs4BJgJADpCEgCu1uzNzQIH/kYe8p54noufVYvUidWnybZUY8AgkEQQYIPFpXnZQ2ypmxF/Y4aSeHwwoEy50bTjUkupvNPhuDTBVUpF8IWaW3tBVZ3bLJ7+ROwNBUNxdsTJtj2O2v3u9Dc7eaIMtaOiW8ioJGls9KbTA9FoxkRMqO4nwTm0A37o4RwRYDVbZrgfRHDokFlLqOltcMNDc5xKaYNFHc6Y2kHGJhsDzVsZEJR4MNeMDXvHR2cQF0ROOapk/swP7RUx+xg+GQtPQL3Mz9b8UagLWMwJIQkAOFIBJiCCQFz28dN+wfhtGg+9yz/HL2nfrX7jNrSOIcJAJAhIASBoEhKXQ12jHao3bd3GI+03eYXn9YqyM2tM7gjVdmNLa6hudSae8dI3AGWrOyM78cTVWts1oDQxoHQCAFQzoRc2tvAwI54CQ7JraePYmkRchNbHLyToLE5soHYJYYUQRCuW+6JTTGVN3TDgQpoizz3XqHd1ngxJMjyXVA5Mh27MUYNd3KAwea2dBGrZk619Iv1oIz2PKYDygQ4TQDpgOkIse2b92pXH5GNYPdPzXF49ew7NY/cUS7jlCB/qEAKUAL9UwHBUQGJR9MZlO0NOLqf8SmHe3h8lia+NTNbRu4o3dGq20s6RdIayiAYElzoWO+Way4RCHactqNIpilSbkioRveVLYQcy3pdubdkAh/Rzg2Wyl6QeqW2n9qra5IDawDzjY4FpUXGialZeMeCAeokKJIi32oU7YS9waIkdXIoCqf2stmuINTbDto4mVJQI7xn6/bVGui4pnlxlP0w9QgC5bVBLHBwmD1BQ40NSMn2zox3NQcz3ZXRiKMoeg0tlqw86jjUPly+AXodLGsaZg6mV5GixXScwkAIIAMJoiJMAgkBJ7Tv3alfn/ODR7GgLl0S/xo6tS/eyrXYznEgBIASAEkAi9rAC8lrSdrdrS8vcuHWatYUjv0ekeZsh6/o7nvsXCHsqV20S4YIaeoWTn1azRRpY9I8UmaevRGwS0FrMiRICzWzvUSgDvrlz3QtKFGiHQ+4rsLmgKcWQlEzotn1rmlS2CgXVhRc7uixjMwTPllW8FO1lvS0R1tWcO8ZX7twIfSduaW8iqpyLoYz0HR6z3UWc/RjyCqLGim7UbnVGTgNbAzkKUWDRi73T6jhXqClUNCiQazxG1hJj5q+JzzikcbEU3GHValF0bp2h7Q3gnuogkmXVtprg3dQvw8gztiJd4qEplqxj9qqTqltZj9o65DD03QV0YEmyrO2kSKLNjGNHBjQweS9Jj2JJI89kjJu2HKmkV/QkCHQA4QhBKQBBIQ+sv3Xt8f8AVvHucQqNKv8AEjo1D97Ia6Cn6EmAkAMgBJAdAARQn7l22ccARCwfLJ3H8N/xDW2X6W19UZu02nt+0FTvS6YDmhp+ZCxoXZpzplrQo7xESCM+KiwSo6DSQDLfRxnGChSHaAraWXGS5o/4jcU7YcHGrY7GnA4RMQSk2MsdFbsY6esDySQSKzVKBr1zzEwPBNMDgdHDqb2bCaVQRUph5Af5q1SoraTItHs5StxW2UHsNan3VTJfub0T9SxKCQGlaE61eTJ7txy107mhQbskkdNXtRU+rAs3N+u05E7ScgfNW45tFc4qRC1Lc2u1oawUdpAa1kFhC7NHnn6qTOfWYI+k2jivR9nnKqxIAdBEdIAmqSEGEDo537t1zdHk+5e8e1xVWBVAsy8yI5VxWhIYCCAGlIY0oA7WpG9oPqvO0+B5Lg1+LfjZoaDLsyJHfUau2+00ng6m8ccB2F5qK7N+b6NXpdQOHwUKGW7YgJpEWxjS5lKhplTev31A0eqDBPIlRZYidQt9tMR0lNITkVz5p1JPAvzjglQy2ZTEAxyz4qRANtMHkgCNdMABSH9GZ1irsdQzwu6ceJ3BWx+JF9kLVj9s49B3Y8TMn5Lv8Zjcp7vw4/I5duPb+kEGF6Rfh5ywwgBwkDHQIcIEdGlBIhl+7PN3pKMeIkpfIGVNkRSkMSAEgBIAQP8AHCjNXFkoOpJnXWaTi6xqfdpVDvxHED9F5OS2yaPURe6KZodKrwRniFzyRcjR29SQPPPghEZIK5fuY4A+lw4osIoyGralXoVW06VoKj/Wc+pU2NATosLW210dw0kltTZDqcS5rkkhOJAttbFarUp1LarQeAXMLwCx7UUM0mmvPdiemJ4wggyQ98T8MoBIrb64wc8kIb6MXrFwal5prBk/XBUd4gZV8V7SpvkO+q76z/ynYPFb+gxbMd/ph67LvyV+Ef8AVaKf2cHYTSgSCCACSEOECDagkQhgAdBCBiTASQCQAkAJADIkrVDj3Z1vb19a37s7doIeSB6T4ysrN41O5Gph1/G0l2FyWuZnlIzyWFNU2jZhK1ZqbW7AZM4iT5Kprok2UmpdsKVBz2t+1eBGDDdymoEJTRkbvXbi6uC4BzQ3IYyRLVNRIubLKnrVXuKA+ql1w+ptM0yCG8kJEtzB0/X20rxor0SwwN+4T3bknEe9o31lqFOs0FlVjwRIgyq2mStM6160A55ZQPoz+pXeDBjopqKZF8FPplLva9aqTmi3u2zxBPH5LoSbkkuih7VFtkc/P3r08FwjzeR8sQVlFQgmgR0ahjCSEOgQbSgEQygkJACQAkAMgBSgBpTGMhpsaVHS0qAGObPH7q8zrcWybPQ6TJugWty51SzqtYSKpbAgrP8A+SO3/iZOno1Wi5j3NZWO6SwuIAVu9FccXJo7PS6z3bhRpvxJggbVGzpUUkT329cNg0KhjPrCEBtRndRoBpqvq2rwSI3Bpc6mpFc4ordKu61rcUywVCxztzZaQHsTdUc6tM31a9LqTTwJbJVKVsvb4KG8rzuJOAJHOV0YoKTSKZy2psiUZYOMF+XwYlejw6WEYq+zBy6iUm6DnK6jkkxwmIIIBBg/1CGAQSEOgQQOD5JNjSIiYxIASAEgBkAN+iYxkBdMUIb2/wDRJK3S7I9OuDuqMO9tKp3NQjIPVec1+VZMnBvaPE4RLrT7oPEcuWeKzZrk7ouydcUBUYYwYULLEyLY68+yLmPta1Rs4dTbvU1IZYUu11NwM0a7HRwdRcJKluEiBUuzfPwwtpk7iC2NyTkBLpWzWEEgT5cAq27FRHvqrQDnh7lOKIPgz9W6a6qwboZv2gng+p0Wnodu7k4NXucLR2XoVwYPN8hNQIdAggmxBNKBhhIAkER2icdcKGR+0nBXIiqYhIASAEgBkAMUxjJ/QyDrFwaNtVIMPc0tb1Cz9fn9PHX2afj9N6kt76Rx7Ft7yxqz/wCy6fcF5qU23ZtRXBNpPda1RzpuMD8ifyCqRore/a5gzLonzUGhpk62ex4ksG6OEZIUSR3FGiwTtbnPKQgZw308lsDHkkxNlff6gym13piQOAOVOMRN0Zm6vnV3ANJgmCY9UK1cEOyt7SsNC2tY9Ei5knmTCak119EZRqr6LXTbnv6LDPphsP6k9V6PRaj1ImJr9K8U7XTJYwu04AhlIQQ/mmyIQKBhgpAOgidrVu6rRH4qob8VVmfsLMK9xAKtIoQQAiU0H/Y0oodJClDoaTfRzqVWs4vAxwmSVz5dVDH2zswaDNl6RWX2rFghjPSJ2tLhJJWTm8o38TcweEjHmfLIN5ufb1Nzy9+wlxJkArKyZ5ZH7jb/ANLHDh4VFp2CE2jh1rknHkq2ZcFxReXlnva/4YiEJkqKdz32xgklgMB0EwFYQaJdvrLRMv2HhM7ZCW0Ewq+vBrcVGu837ilQWQKutk8DJ2wTwEppCbIRfUuTxOTJ4wpWJKy40yyDYxPM8yq3ItUaK3ty2Laj1FYH4FSiyE0yDpNc0mUyIyyDIO0q/T6l4ZWdk9HHU40pFrb6ox5h47l8wCTLCtrB5GEuJcMwNV4eePmPJYMzkGQRIIMghaMZqXN2jHljlF01QalwQcW+UOFHgigwVIAgUhErSxN3Zjrd0x+8FRqX/jZbgXvRWEq8rQ0oGMnVgkBVqtpjJjoOJK5M+rxYu2aOl8dm1HS4IFa9c7A+zb4HJWFqPJzlwuD1Wk8Jix8zVsiuPHz4zkrMlllLtm1HFGCpLgiikTVLifRaIaPFR3Mr9JOe4k1GzTeOohSTJ5Y3Cid2F9AXVM47uuKg/wBpH8lJswJQ2s2/dBzcjyxwSsjXJU6hY8fR8B4hNMKKK50ZryYcWH4Ke4W0hVdFcyCagI5YRuDaHb6YAcu3GeHJG4Npa2dtHBmZgCMpNjSoura27tknicnCiMyHbc94bamOL6k+wKV2rFscpJIhU6e1jR0bChuN2GKogVGTnnzUk6ISgvtHa1rvp+q9zWzO3i0roxazJj6ZzZfH483yiWlvqMwHt2/mbMLW03klL5GBrPByhziJ7HhwkEOHIgyFqwyRn8TAy4Z43UlydArSkJIRO0Rs31gP9Ww/Fc2r/wBpl2n+aKgldT47K0mA94aJLo6dSufLqceP5M7NPoMub4oiV73k3H5jkrF1XlZPiHR6fQ+BhDnJyyEXlxJ4nmSZJWNPJKTtno8eKMFS4Q0KtssoFxkgeKQBQgK4HbwMqSZGVVQtJr/VtRpGdtKsO4qeB5Kwx9VDk9DoPxnI+ISZx/R0q0g9pjI5hFiK6vYbpgx0nknYWQn6a9xy6R0BTsDpR02D+HMnmSiwLK3tm0wMAujieKVh2NdP2tPl1gIHR5/dVPrN5WqHNNp7mh02jiUpSNDR4Odw5b/BVWatcnF3NWJlUkOz4IbHFHUIUmgkgqNR1Iy1xHMjiCuvBqpQOHUaLFl+SLO2vw7DvQdycPVK2tN5GM+Jnmdb4WUecfJPBnyjGeK1IyT6do8/kxyg6aotOzTd2pWA/wA7d7gSuXWtrEy7SXv/AIZaveRhuBwnmVlanycmqies0PgoQ5ycshPqFx4+fMlY88spu2z0OLDGHCVIEc/cVVyXDERn3pJsdUNVftYT4SgjJ0jlaSW7j94yPJMjjdskE+zrlKibko9kKpqlJr2t3F7i7bLRLWlTUTjnrsalQdZsu9sjqCpEM0VJWbvR7jvKFIky7bDj1KGZclTLOmZ4fxhRIicSD4II0C4+HPKYDNbPggDqG+GYwkBQ9qLo06BaDFWr6LY+6OalZbixubMvTYGtaBgAQFU2b+KKhGh0iw4OGT5qZBjjBHxQI6iFG2iaCb71LcJr+ChWKRVOF9Ei3uHUuBls5actK7tPq54+mZmr8fizrlcmt7EVxW1K15PaHOLYnG0rQy61ZcbPOT8bPTzv6MMTJXnWz3SHhRJoHgfPigAuaQEa6PpMBG5kyW/iUkVZOWdKtYsaCGSTgCYSCUmkQLltSsIMhv4RgKaOLLHJk7Kq5sTTyMic44KxSRmZdLKLsutOuBWZTk/bU8O/MkaOmn6ip9mq0C6FF4DnjunvggmO7KRHUYG+V2bOlRBggyCJGZBCiZztBvt9yBcfRzNscZ80BYVO2I+SAbRw1C5p2dMvqPjk1v3qh8EFuPFKbpGB1C9dd1nPI2tmKbJkMaouRr4NOoL+nJoznphRR1t/Zwdd0y4tFVm4GImCCpbSn18d0JwlBZ2A4/xhOxP+9HVnAeSiTQSQMNqnETHnOFZZW0az6N27tV8WWT3/ABA+atxPkyPKKoIxZOR8VyG2GDhIkA8IAIcR5ZSA41hL2+eUyDXIdUSWoTJUmLYhg0c6lEGcSCIOMIRXLGn2Qn2O125jtpGYmFPccU9K4vdE6fWqrRxExBlslykNynFUafst2mNFzGVCe6Jja4yWeSCjJiU1f2ej0ntexrg4OY4bmkGQ4Jmc04un2PHsQKyJqd8yzoPqPOAIY2c1XdAkWYcTmzzXVtSfd1XVKj9rZhjZhtNvRQNrFjjiRXtvKXDvmzwgSShxJR1GOxq17AOwST94iA1NIeTKmqRUVLXdJ4OJknmSpGdPA27Q9vXqUHAEl9OYIOS1DQYsmXG6fRbNO6PHIUGasXas7M4+xRZYjohAwgcKQh2D3qVkTY/Rk2dSuD009w/earsPZjeXftRhW53DxlcxtI6ckiaAmShgEOPsUQBAl6bAd4yPNJAGU2wGhJMAC1SFRzLAeIz5IIuJzdSE54E+1pUkymWM0/ZXX3WtRtCq8vt3mKLyc03KUWcOpwG0vdTp21E1HuhkS0SC556KfRwRg3LaeddoNbN1U3PdtY3FGi0zsaq+zXhjjhjZna1R1wYiGchyCl0UzcsjOtvaBnKTzKi3Z0Y9NFLkkNoylZesaOoojpywiyfpnJ1sCctkIsi8KZIYwADHAQEmyxQodgyfOAkM6ER5oAY8QPaVIizq1MRtvouZN3qB/DbNb5Sf5LowfIwvLv4n/9k=" alt="Profile Picture" class="w-48 h-48 rounded-full shadow-lg border-4 border-white">
+        </div>
+        <div class="md:w-2/3 md:pl-12">
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">About Me</h2>
+          <p class="text-lg mb-6 text-gray-600">
+            I'm an aspiring Information Technology professional with expertise in Python, full-stack development, automation, and cloud deployment. Currently pursuing B.Tech IT at SIMATS Engineering, Chennai, with a CGPA of 8.2.
+          </p>
+          <div class="flex flex-wrap">
+            <div class="w-full md:w-1/2 mb-4">
+              <p class="flex items-center text-gray-700">
+                <i data-feather="mail" class="w-4 h-4 mr-2 text-blue-500"></i>
+                m.vishnusuderson@gmail.com
+              </p>
+            </div>
+            <div class="w-full md:w-1/2 mb-4">
+              <p class="flex items-center text-gray-700">
+                <i data-feather="phone" class="w-4 h-4 mr-2 text-blue-500"></i>
+                9788952306
+              </p>
+            </div>
+            <div class="w-full md:w-1/2 mb-4">
+              <p class="flex items-center text-gray-700">
+                <i data-feather="map-pin" class="w-4 h-4 mr-2 text-blue-500"></i>
+                Chennai, India
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-16 bg-gray-50" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-10 text-center">Education</h2>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="card p-6" data-aos="fade-right">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-xl">B.Tech in Information Technology</h3>
+              <p class="text-gray-600">SIMATS Engineering, Chennai</p>
+            </div>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm">2022-2026</span>
+          </div>
+          <div class="mt-3">
+            <p class="text-gray-700">Current CGPA: 8.2</p>
+          </div>
+        </div>
+        <div class="card p-6" data-aos="fade-left">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-xl">Higher Secondary School (HSC)</h3>
+              <p class="text-gray-600">Nazareth Matriculation Higher Secondary School, Chennai</p>
+            </div>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm">2020-2022</span>
+          </div>
+          <div class="mt-3">
+            <p class="text-gray-700">Percentage: 75%</p>
+          </div>
+        </div>
+        <div class="card p-6" data-aos="fade-right">
+          <div class="flex justify-between items-start">
+            <div>
+              <h3 class="font-bold text-xl">Secondary School Leaving Certificate (SSLC)</h3>
+              <p class="text-gray-600">Nazareth Matriculation Higher Secondary School, Chennai</p>
+            </div>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded text-sm">2019-2020</span>
+          </div>
+          <div class="mt-3">
+            <p class="text-gray-700">Percentage: 77.8%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 bg-white" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-10 text-center">Technical Skills</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="card p-8">
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
+            <div class="flex flex-wrap">
+              <span class="skill-tag" data-aos="flip-up">Python</span>
+              <span class="skill-tag" data-aos="flip-up">JavaScript</span>
+              <span class="skill-tag" data-aos="flip-up">R</span>
+              <span class="skill-tag" data-aos="flip-up">Java</span>
+              <span class="skill-tag" data-aos="flip-up">C</span>
+            </div>
+          </div>
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">Frameworks & Libraries</h3>
+            <div class="flex flex-wrap">
+              <span class="skill-tag" data-aos="flip-up">Django</span>
+              <span class="skill-tag" data-aos="flip-up">Flask</span>
+              <span class="skill-tag" data-aos="flip-up">React</span>
+            </div>
+          </div>
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold mb-4">Database & Tools</h3>
+            <div class="flex flex-wrap">
+              <span class="skill-tag" data-aos="flip-up">MySQL</span>
+              <span class="skill-tag" data-aos="flip-up">Redis</span>
+              <span class="skill-tag" data-aos="flip-up">Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Keep all existing sections: Header, About, Education, Skills -->
+
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-gray-50" data-aos="fade-up">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card project-card" data-aos="zoom-in">
+        <div class="h-48 bg-blue-500 flex items-center justify-center">
+          <i data-feather="file-text" class="w-16 h-16 text-white"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">PDF to MP3 Converter</h3>
+          <p class="text-gray-600 mb-4">Django-based app converting PDFs to MP3 with speech APIs & rule-based voice assistant.</p>
+          <a href="https://github.com/vishnu-suderson/CGPA-Calulation" target="_blank" class="text-blue-600 font-medium flex items-center">
+            View on GitHub <i data-feather="external-link" class="w-4 h-4 ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="card project-card" data-aos="zoom-in">
+        <div class="h-48 bg-green-500 flex items-center justify-center">
+          <i data-feather="layers" class="w-16 h-16 text-white"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Waste Classification Using CNN</h3>
+          <p class="text-gray-600 mb-4">CNN-based classification model to sort waste into recyclable and organic categories.</p>
+          <a href="https://github.com/vishnu-suderson/CNN-Plastic-Waste-Classification" target="_blank" class="text-blue-600 font-medium flex items-center">
+            View on GitHub <i data-feather="external-link" class="w-4 h-4 ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="card project-card" data-aos="zoom-in">
+        <div class="h-48 bg-purple-500 flex items-center justify-center">
+          <i data-feather="database" class="w-16 h-16 text-white"></i>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">SIMATS Student CGPA-Calulation</h3>
+          <p class="text-gray-600 mb-4">Flask & Selenium app automating login, grade & attendance scraping from Saveetha Student Portal.</p>
+          <a href="https://github.com/vishnu-suderson/CGPA-Calulation" target="_blank" class="text-blue-600 font-medium flex items-center">
+            View on GitHub <i data-feather="external-link" class="w-4 h-4 ml-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-16 bg-white" data-aos="fade-up">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10 text-center">Certifications</h2>
+    <div class="max-w-3xl mx-auto">
+      <div class="card p-8">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="p-4 border-l-4 border-blue-500">
+            <h3 class="font-semibold">Full Stack Development</h3>
+            <p class="text-gray-600">GUVI IITM Research Park</p>
+          </div>
+          <div class="p-4 border-l-4 border-blue-500">
+            <h3 class="font-semibold">Postman API Fundamentals</h3>
+            <p class="text-gray-600">LetsUpgrade</p>
+          </div>
+          <div class="p-4 border-l-4 border-blue-500">
+            <h3 class="font-semibold">Web Scraping with Python</h3>
+            <p class="text-gray-600">Great Learning</p>
+          </div>
+          <div class="p-4 border-l-4 border-blue-500">
+            <h3 class="font-semibold">Responsive Web Design</h3>
+            <p class="text-gray-600">FreeCodeCamp</p>
+          </div>
+          <div class="p-4 border-l-4 border-blue-500">
+            <h3 class="font-semibold">Game Development Using PyGame</h3>
+            <p class="text-gray-600">GUVI</p>
+          </div>
+          <div class="p-4 border-l-4 border-blue-500">
+            <h3 class="font-semibold">Machine Learning Intro</h3>
+            <p class="text-gray-600">Great Learning</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-50" data-aos="fade-up">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+    <div class="max-w-md mx-auto card p-8">
+      <div class="flex flex-col items-center space-y-4">
+        <div class="flex items-center">
+          <i data-feather="mail" class="w-5 h-5 mr-3 text-blue-500"></i>
+          <a href="mailto:m.vishnusuderson@gmail.com" class="text-gray-700 hover:text-blue-600">m.vishnusuderson@gmail.com</a>
+        </div>
+        <div class="flex items-center">
+          <i data-feather="phone" class="w-5 h-5 mr-3 text-blue-500"></i>
+          <p class="text-gray-700">9788952306</p>
+        </div>
+        <div class="flex space-x-6 mt-6">
+          <a href="https://github.com/vishnu-suderson" target="_blank" class="text-gray-600 hover:text-gray-900">
+            <i data-feather="github" class="w-6 h-6"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/vishnusuderson/" target="_blank" class="text-blue-600 hover:text-blue-800">
+            <i data-feather="linkedin" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 bg-gray-800 text-white text-center">
+  <div class="container mx-auto px-6">
+    <p>© 2025 Vishnu Suderson. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  feather.replace();
+  AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+</script>
+</body>
+</html>
